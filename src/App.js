@@ -44,12 +44,12 @@ const App = () => {
     if(deviceLocation) {
 
       // Get the weather forecast for the device location.
-      axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${deviceLocation.latitude}&lon=${deviceLocation.longitude}&exclude=minutely&units=metric&appid=464d302e2871d55aec231e19fb9078f7`)
+      axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${deviceLocation.latitude}&lon=${deviceLocation.longitude}&exclude=minutely&units=metric&appid=<<<API_KEY>>>`)
       .then(response => {setForecast(response.data)})
       .catch(error => {console.log(error);});
 
       // Get the nearest city name for the device location.
-      axios.get(`https://api.openweathermap.org/geo/1.0/reverse?lat=${deviceLocation.latitude}&lon=${deviceLocation.longitude}&limit=1&appid=464d302e2871d55aec231e19fb9078f7`)
+      axios.get(`https://api.openweathermap.org/geo/1.0/reverse?lat=${deviceLocation.latitude}&lon=${deviceLocation.longitude}&limit=1&appid=<<<API_KEY>>>`)
       .then(response => {
         setLocationName(response.data[0].name);
 
